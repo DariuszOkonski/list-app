@@ -6,7 +6,11 @@ export default function UsersListOneItem({ user }) {
       <strong>
         {user.first_name} {user.last_name}
       </strong>
-      {user.username}
+      <span>- {user.username}</span>
+      <img
+        src={`https://raw.githubusercontent.com/pixelastic/fakeusers/master/pictures/${user.picture}`}
+        alt=""
+      />
     </li>
   );
 }
