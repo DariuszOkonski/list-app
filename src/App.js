@@ -1,11 +1,11 @@
 import "./App.css";
-import { people } from "./people";
+import UsersList from "./components/UsersList/UsersList";
+import { people } from "./data/people";
 
 function App() {
-  console.log(people);
   return (
     <div className="App">
-      <header className="App-header">Welcome</header>
+      <UsersList users={people} />
     </div>
   );
 }
