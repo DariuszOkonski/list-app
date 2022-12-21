@@ -9,9 +9,12 @@ export default function UsersListOneItem({ user }) {
         src={`https://raw.githubusercontent.com/pixelastic/fakeusers/master/pictures/${user.picture}`}
         alt={`Photo of ${user.first_name}`}
       />
-      <span>
-        {user.first_name} {user.last_name}
-      </span>
+      <div className="UsersListOneItem__text">
+        <p className="UsersListOneItem__name">
+          {user.first_name} {user.last_name}
+        </p>
+        <p className="UsersListOneItem__username">{user.username}</p>
+      </div>
       {/* <span>- {user.username}</span> */}
     </li>
   );

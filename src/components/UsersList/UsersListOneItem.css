@@ -1,6 +1,15 @@
 .UsersListOneItem {
-  background-color: yellow;
   margin: 10px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: 0.2s;
+}
+
+.UsersListOneItem:hover {
+  background-color: #efefef;
 }
 
 .UsersListOneItem__photo {
@@ -10,4 +19,19 @@
   margin: 5px 10px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.UsersListOneItem__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.UsersListOneItem__text p {
+  margin: 0;
+}
+
+.UsersListOneItem__username {
+  font-size: 75%;
+  color: gray;
 }
