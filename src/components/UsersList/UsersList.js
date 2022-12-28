@@ -10,16 +10,19 @@ export default function UsersList(props) {
   };
 
   return (
-    <ul className="UsersList">
-      {[...list]
-        .sort((a, b) => a.username.localeCompare(b.username))
-        .map((userObj) => (
-          <UsersListOneItem
-            key={userObj.username}
-            user={userObj}
-            onRemoveItem={removeItem}
-          />
-        ))}
-    </ul>
+    <>
+      <h3>Number of users: {list.length}</h3>
+      <ul className="UsersList">
+        {[...list]
+          .sort((a, b) => a.username.localeCompare(b.username))
+          .map((userObj) => (
+            <UsersListOneItem
+              key={userObj.username}
+              user={userObj}
+              onRemoveItem={removeItem}
+            />
+          ))}
+      </ul>
+    </>
   );
 }
