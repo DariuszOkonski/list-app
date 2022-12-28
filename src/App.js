@@ -1,40 +1,26 @@
 import { useState } from "react";
 import "./App.css";
-import UsersList from "./components/UsersList/UsersList";
-import { people } from "./data/people";
 
 function App() {
-  const [gender, setGender] = useState("");
-  const [agreementChecked, setAgreementChecked] = useState(true);
+  const [bgColor, setBgColor] = useState("white");
 
   return (
-    <form className="App">
-      <select
-        name="gender"
-        value={gender}
-        onChange={(e) => setGender(e.target.value)}
-      >
-        <option value="">-wybierz-</option>
-        <option value="W">Woman</option>
-        <option value="M">Man</option>
+    <div className="App">
+      <div className="sandbox" style={{ backgroundColor: bgColor }}></div>
+
+      <select value={bgColor} onChange={(e) => setBgColor(e.target.value)}>
+        <option value="white">-select-</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="crimson">Crimson</option>
       </select>
-
-      <input
-        type="checkbox"
-        checked={agreementChecked}
-        onChange={(e) => setAgreementChecked(!agreementChecked)}
-        id=""
-      />
-
-      <p>You've entered {gender.length} characters.</p>
-      <button>send</button>
-      {/* <UsersList users={people} /> */}
-    </form>
+    </div>
   );
 }
 
 export default App;
-
+17: 30
 // wyświetlić listę ludzi
 // button -> posortować według nazwy użytkownika
 // wyświetlić awatar
