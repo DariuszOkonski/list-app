@@ -6,9 +6,7 @@ export default function UsersList(props) {
   const [list, setList] = useState([...props.users]);
 
   const removeItem = (userName) => {
-    console.log("Usuń element: ", userName);
-    const tempList = [...list];
-    setList(tempList.filter((user) => user.username !== userName));
+    setList((list) => list.filter((user) => user.username !== userName));
   };
 
   return (
