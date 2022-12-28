@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import UsersListOneItem from "./UsersListOneItem";
 import "./UsersList.css";
 
 export default function UsersList(props) {
+  const [list, setList] = useState([...props.users]);
+
+  const removeItem = (userName) => {
+    console.log("Usuń element: ", userName);
+    const tempList = [...list];
+    setList(tempList.filter((user) => user.username !== userName));
+  };
+
   return (
     <ul className="UsersList">
-      {[...props.users]
+      {[...list]
         .sort((a, b) => a.username.localeCompare(b.username))
         .map((userObj) => (
-          <UsersListOneItem key={userObj.username} user={userObj} />
+          <UsersListOneItem
+            key={userObj.username}
+            user={userObj}
+            onRemoveItem={removeItem}
+          />
         ))}
     </ul>
   );

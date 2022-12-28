@@ -1,9 +1,18 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import "./UsersListOneItem.css";
 
-export default function UsersListOneItem({ user }) {
+export default function UsersListOneItem({ user, onRemoveItem }) {
+  const personListClicked = () => {
+    onRemoveItem(user.username);
+  };
+
   return (
-    <li key={user.username} className="UsersListOneItem">
+    <li
+      key={user.username}
+      className="UsersListOneItem"
+      onClick={personListClicked}
+    >
       <img
         className="UsersListOneItem__photo"
         src={`https://raw.githubusercontent.com/pixelastic/fakeusers/master/pictures/${user.picture}`}
