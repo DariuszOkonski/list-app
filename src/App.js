@@ -2,18 +2,14 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState(0);
+  const [person, setPerson] = useState({
+    firstName: "",
+    lastName: "",
+    age: 0,
+  });
 
   const sendForm = (e) => {
     e.preventDefault();
-
-    const person = {
-      firstName,
-      lastName,
-      age,
-    };
 
     console.log(person);
   };
@@ -26,8 +22,13 @@ function App() {
             Imie: <br />
             <input
               type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={person.firstName}
+              onChange={(e) =>
+                setPerson((person) => ({
+                  ...person,
+                  firstName: e.target.value,
+                }))
+              }
             />
           </label>
         </p>
@@ -36,8 +37,13 @@ function App() {
             Nazwisko: <br />
             <input
               type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={person.lastName}
+              onChange={(e) =>
+                setPerson((person) => ({
+                  ...person,
+                  lastName: e.target.value,
+                }))
+              }
             />
           </label>
         </p>
@@ -46,8 +52,13 @@ function App() {
             Wiek: <br />
             <input
               type="number"
-              value={age}
-              onChange={(e) => setAge(Number(e.target.value))}
+              value={person.age}
+              onChange={(e) =>
+                setPerson((person) => ({
+                  ...person,
+                  age: Number(e.target.value),
+                }))
+              }
             />
           </label>
         </p>
