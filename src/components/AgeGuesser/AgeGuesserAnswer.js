@@ -26,7 +26,7 @@ export default function AgeGuesserAnswer(props) {
   if (age === null && count === false) return <p>Wczytywanie...</p>;
 
   if (age === null && count === 0) {
-    <p>Nie znaleziono</p>;
+    return <p>Nie znaleziono</p>;
   }
 
   return (
