@@ -14,6 +14,13 @@ function App() {
     console.log(person);
   };
 
+  const change = (e) => {
+    setPerson((person) => ({
+      ...person,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div className="App">
       <form onSubmit={sendForm}>
@@ -22,13 +29,9 @@ function App() {
             Imie: <br />
             <input
               type="text"
+              name="firstName"
               value={person.firstName}
-              onChange={(e) =>
-                setPerson((person) => ({
-                  ...person,
-                  firstName: e.target.value,
-                }))
-              }
+              onChange={change}
             />
           </label>
         </p>
@@ -37,13 +40,9 @@ function App() {
             Nazwisko: <br />
             <input
               type="text"
+              name="lastName"
               value={person.lastName}
-              onChange={(e) =>
-                setPerson((person) => ({
-                  ...person,
-                  lastName: e.target.value,
-                }))
-              }
+              onChange={change}
             />
           </label>
         </p>
@@ -52,13 +51,9 @@ function App() {
             Wiek: <br />
             <input
               type="number"
+              name="age"
               value={person.age}
-              onChange={(e) =>
-                setPerson((person) => ({
-                  ...person,
-                  age: Number(e.target.value),
-                }))
-              }
+              onChange={change}
             />
           </label>
         </p>
