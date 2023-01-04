@@ -1,4 +1,5 @@
 import "./App.css";
+import ConfirmDialog from "./components/common/Dialog/ConfirmDialog";
 import Dialog from "./components/common/Dialog/Dialog";
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
           Amet nostrum quis omnis modi quidem voluptatibus, fuga earum vero.
         </p>
       </Dialog>
+
+      <ConfirmDialog title="Confirm Dialog">
+        <h1>Confirm Dialog</h1>
+      </ConfirmDialog>
 
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ipsam,
