@@ -1,66 +1,22 @@
-import { useState } from "react";
 import "./App.css";
+import Dialog from "./components/common/Dialog/Dialog";
 
 function App() {
-  const [person, setPerson] = useState({
-    firstName: "",
-    lastName: "",
-    age: 0,
-  });
-
-  const sendForm = (e) => {
-    e.preventDefault();
-
-    console.log(person);
-  };
-
-  const change = (e) => {
-    setPerson((person) => ({
-      ...person,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
     <div className="App">
-      <form onSubmit={sendForm}>
-        <p>
-          <label>
-            Imie: <br />
-            <input
-              type="text"
-              name="firstName"
-              value={person.firstName}
-              onChange={change}
-            />
-          </label>
-        </p>
-        <p>
-          <label>
-            Nazwisko: <br />
-            <input
-              type="text"
-              name="lastName"
-              value={person.lastName}
-              onChange={change}
-            />
-          </label>
-        </p>
-        <p>
-          <label>
-            Wiek: <br />
-            <input
-              type="number"
-              name="age"
-              value={person.age}
-              onChange={change}
-            />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Wyslij</button>
-        </p>
-      </form>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore error
+        adipisci magnam cupiditate voluptatibus, pariatur placeat eius
+        reiciendis sequi quod deserunt in maxime unde quibusdam optio, ratione
+        ullam asperiores neque.
+      </p>
+      <Dialog />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ipsam,
+        eveniet eligendi blanditiis quasi totam delectus consequatur. Asperiores
+        quos porro, ratione et accusamus autem libero dolore quasi nulla maxime
+        illo.
+      </p>
     </div>
   );
 }
