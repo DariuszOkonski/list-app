@@ -10,7 +10,18 @@ function App() {
         reiciendis sequi quod deserunt in maxime unde quibusdam optio, ratione
         ullam asperiores neque.
       </p>
-      <Dialog />
+      <Dialog>Witam serdecznie na stronie głównej</Dialog>
+
+      <Dialog title="Testowe Okno">
+        <h1>Hello</h1>
+        <h2>Welcome</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsum
+          aliquid nam quaerat rerum alias, ea possimus numquam corrupti rem.
+          Amet nostrum quis omnis modi quidem voluptatibus, fuga earum vero.
+        </p>
+      </Dialog>
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ipsam,
         eveniet eligendi blanditiis quasi totam delectus consequatur. Asperiores
