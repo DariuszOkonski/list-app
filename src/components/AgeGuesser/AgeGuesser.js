@@ -8,14 +8,18 @@ export default function AgeGuesser() {
   const sendForm = (e) => {
     e.preventDefault();
     setCheck(true);
-    console.log("sendFrom");
+  };
+
+  const returnToMainPage = () => {
+    setName("");
+    setCheck(false);
   };
 
   if (check) {
     return (
       <>
         <AgeGuesserAnswer name={name} />
-        <button onClick={() => setCheck(false)}>Try again</button>
+        <button onClick={returnToMainPage}>Try again</button>
       </>
     );
   }
